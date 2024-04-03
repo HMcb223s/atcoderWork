@@ -5,7 +5,7 @@ https://github.com/online-judge-tools/oj/blob/master/docs/getting-started.ja.md
 
 g++ abc166_a.cpp && oj t
 
-oj download https://atcoder.jp/contests/abc157/tasks/abc157_c
+oj download https://atcoder.jp/contests/abc212/tasks/abc212_b
 
 cat <<EOF > main.py
 
@@ -15,7 +15,7 @@ oj t -c "python3 main.py"
  
  mkdir a; cd $_ ; touch main.py
  
-oj submit --guess-python-interpreter pypy https://atcoder.jp/contests/abc157/tasks/abc157_c main.py
+oj submit --guess-python-interpreter pypy https://atcoder.jp/contests/abc212/tasks/abc212_b main.py
   
  
  
