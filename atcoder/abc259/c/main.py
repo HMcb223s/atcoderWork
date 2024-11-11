@@ -1,35 +1,33 @@
-#!/usr/local/python
-s = input()
-t = input()
+def conv(s):
+    n = len(s)
+    runlength = []
+    l, r = 0, 1
+    while l < n:
+        while r < n and s[l] == s[r]:
+            r += 1
 
-len_s = len(s)
-len_t = len(t)
+        runlength.append((s[l], r - l))
+        l = r
+        r += 1
+    return runlength
 
-if len_s > len_t:
-  print("No")
-  exit(0)
+s, t  = conv(input()), conv(input())
+s_n, t_n = len(s), len(t)
 
-flg = True
-s_idx = 0
+if s_n != t_n:
+    print("No")
+    exit()
 
-for t_idx in range(len_t):
-  if s[s_idx] == t[t_idx]:
-    s_idx += 1
-    continue
+for i in range(t_n):  
+    s_chr, s_cnt = s[i]
+    t_chr, t_cnt = t[i]
+    # print(s_chr, s_cnt, t_chr, t_cnt)
+    if s_chr != t_chr or s_cnt > t_cnt:
+        print("No")
+        exit()
+    if s_cnt < t_cnt and s_cnt == 1:
+        print("No")
+        exit()
+    
+print("Yes") 
 
-  if s_idx-1 < 0:
-    flg = False
-    break
-
-  if s[s_idx-2] == s[s_idx-1] and s[s_idx-1] == t[t_idx] and t[t_idx-1] == t[t_idx]:
-    while(t_idx < len_t and t[t_idx-1] == t[t_idx]):
-      t_idx += 1
-  else :
-    flg = False
-    break
-
-
-if flg:
-  print("Yes")
-else:
-  print("No")
