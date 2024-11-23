@@ -1,5 +1,3 @@
-#!/user/local/python
-
 import math
 n = input()
 a = list(map(int, input().split()))
