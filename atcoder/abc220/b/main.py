@@ -1,4 +1,3 @@
-#!/usr/local/python
 k = int(input())
 str_a, str_b = map(str, input().split())
 

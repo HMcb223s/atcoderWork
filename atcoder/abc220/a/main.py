@@ -1,4 +1,3 @@
-#!/usr/local/python
 a, b, c = map(int, input().split())
 
 ans = -1
